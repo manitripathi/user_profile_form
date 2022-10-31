@@ -8,7 +8,7 @@ function Navlink() {
   ];
 
   return (
-      <nav className="navbar navbar-expand-sm justify-content-left">
+      <nav className="navbar navbar-expand-sm justify-content-left ml-3">
         <ul className="navbar-nav">
         {link.map((item)=>{
                 return(

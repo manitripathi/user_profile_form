@@ -18,7 +18,7 @@ function EditContactAndOtherInfo({ setShowComponent }) {
   return (
     <form className="details" key="id" onSubmit={handleSubmit(onEditData)}>
       <div className="container">
-        <h4>Contact Information</h4>
+        <h4 className="mt-4">Contact Information</h4>
         <div>
           <input type="hidden" Value={contacts[0]?.id} {...register("id")} />
           <input
