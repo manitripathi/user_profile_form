@@ -1,0 +1,23 @@
+.App {
+  text-align: left;
+}
+.link_name{
+  padding: 6px;
+}
+.link_icon{
+  margin-left: 16px;
+}
+hr.rounded {
+  border-top: 8px solid orange;
+  border-radius: 5px;
+  text-align: left;
+  width: 50%;
+  margin-left: 2%;
+}
+button, input{
+  border: none;
+  background-color: transparent;
+}
+button:hover, input:hover{
+  background-color: #ececec;
+}
