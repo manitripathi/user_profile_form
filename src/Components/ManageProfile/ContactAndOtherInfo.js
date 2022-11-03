@@ -50,6 +50,36 @@ function ContactAndOtherInfo(props) {
           </div>
         );
       })}
+
+      <h4>Other</h4>
+      {contacts?.map((item) => {
+        return (
+          <div key={item.id}>
+            <div>
+              <div className="mb-3">
+                <div className="font-weight-light">Medicare Reason</div>
+                <div>{item?.medicareReason}</div>
+              </div>
+              <div className="mb-3">
+                <div className="font-weight-light">Medicare Plan</div>
+                <div>{item?.medicarePlan}</div>
+              </div>
+              <div className="mb-3">
+                <div className="font-weight-light">Medicare Begin Date</div>
+                <div>{item?.medicareBeginDate}</div>
+              </div>
+              <div className="mb-3">
+                <div className="font-weight-light">Medicare Termination Date</div>
+                <div>{item?.medicareTerminationDate}</div>
+              </div>
+              <div className="mb-3">
+                <div className="font-weight-light">Benefit Salary - 01/01/20...</div>
+                <div>{item?.benefitSalary}</div>
+              </div>
+            </div>
+          </div>
+        );
+      })}
     </div>
   );
 }

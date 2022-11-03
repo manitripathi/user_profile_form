@@ -9,7 +9,7 @@ function EditContactAndOtherInfo({ setShowComponent }) {
   const contacts = useSelector((state) => state?.Reducer?.contact);
 
   const onEditData = (data) => {
-    // console.log(data, "l");
+    console.log(data, "l");
     dispatch(editData(data));
     // console.log(dispatch(editData(data)),"ggg");
     setShowComponent(false);
@@ -172,13 +172,180 @@ function EditContactAndOtherInfo({ setShowComponent }) {
               />
             </div>
           </div>
-          <div>
-            <button type="button" onClick={() => setShowComponent(false)}>
-              Cancel
-            </button>
-            <input type="submit" id="1" />
+        </div>
+
+        <h4 className="mt-4">Other</h4>
+
+        <div>
+          <div className="mb-3 form-group">
+            <label htmlFor="Address 2" className="font-weight-light">
+              Medicare Reason
+            </label>
+            <div>
+              <select {...register("medicareReason")} className="form-control">
+                <option value="Select Medicare Reason">
+                  Select Medicare Reason
+                </option>
+                <option value="Age">Age</option>
+                <option value="Age 1">Age 1</option>
+              </select>
+            </div>
+          </div>
+          <div className="mb-3 form-group">
+            <label htmlFor="Address 2" className="font-weight-light">
+              Medicare Plan
+            </label>
+            <div>
+              <select {...register("medicarePlan")} className="form-control">
+                <option value="Part A and B">Part A and B</option>
+                <option value="Part A">Part A</option>
+                <option value="Part B">Part B</option>
+              </select>
+            </div>
+          </div>
+          <div className="mb-3 form-group">
+            <label htmlFor="Address 2" className="font-weight-light">
+              Medicare Begin Date
+            </label>
+            <div>
+              <input
+                type="date"
+                id="1"
+                className="form-control"
+                name="date"
+                Value={contacts ? contacts[0]?.medicareBeginDate : ""}
+                {...register("medicareBeginDate")}
+                placeholder=""
+              />
+            </div>
+          </div>
+          <div className="mb-3 form-group">
+            <label htmlFor="Address 2" className="font-weight-light">
+              Medicare End Date
+            </label>
+            <div>
+              <input
+                type="date"
+                id="1"
+                className="form-control"
+                name="date"
+                Value={contacts ? contacts[0]?.medicareTerminationDate : ""}
+                {...register("medicareTerminationDate")}
+                placeholder=""
+              />
+            </div>
           </div>
         </div>
+
+        <div>
+          <div className="mb-3 form-group">
+            <label htmlFor="VIP" className="font-weight-light">
+              <input
+                TYPE="checkbox"
+                id="1"
+                // className="form-control"
+                name="VIP"
+                Value="VIP"
+              />
+              <span> VIP</span>
+            </label>
+          </div>
+          <div className="mb-3 form-group">
+            <label htmlFor="Highly Compensated" className="font-weight-light">
+              <input
+                TYPE="checkbox"
+                id="1"
+                // className="form-control"
+                name="Highly Compensated"
+                Value="Highly Compensated"
+              />
+              <span> Highly Compensated</span>
+            </label>
+          </div>
+          <div className="mb-3 form-group">
+            <label htmlFor="Test Employee" className="font-weight-light">
+              <input
+                TYPE="checkbox"
+                id="1"
+                // className="form-control"
+                name="Test Employee"
+                Value="Test Employee"
+              />
+              <span> Test Employee</span>
+            </label>
+          </div>
+        </div>
+
+        <h4 className="mt-4">Benefit Salary</h4>
+
+        <div>
+          <div className="mb-3 form-group">
+            <label htmlFor="date" className="font-weight-light">
+              2023-01-01 to 2023-12-31
+            </label>
+            <div>
+              <input
+                id="1"
+                className="form-control"
+                name="date"
+                Value={contacts ? contacts[0]?.benefitSalary : ""}
+                {...register("benefitSalary")}
+                placeholder=""
+              />
+            </div>
+          </div>
+          <div className="mb-3 form-group">
+            <label htmlFor="date" className="font-weight-light">
+              2023-01-01 to 2023-12-31
+            </label>
+            <div>
+              <input
+                id="1"
+                className="form-control"
+                name="date"
+                Value={contacts ? contacts[0]?.benefitSalary : ""}
+                {...register("benefitSalary")}
+                placeholder=""
+              />
+            </div>
+          </div>
+          <div className="mb-3 form-group">
+            <label htmlFor="date" className="font-weight-light">
+              2023-01-01 to 2023-12-31
+            </label>
+            <div>
+              <input
+                id="1"
+                className="form-control"
+                name="date"
+                Value={contacts ? contacts[0]?.benefitSalary : ""}
+                {...register("benefitSalary")}
+                placeholder=""
+              />
+            </div>
+          </div>
+          <div className="mb-3 form-group">
+            <label htmlFor="date" className="font-weight-light">
+              2023-01-01 to 2023-12-31
+            </label>
+            <div>
+              <input
+                id="1"
+                className="form-control"
+                name="benefitSalary"
+                Value={contacts ? contacts[0]?.benefitSalary : ""}
+                {...register("benefitSalary")}
+                placeholder=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <button type="button" onClick={() => setShowComponent(false)}>
+          Cancel
+        </button>
+        <input type="submit" id="1" />
       </div>
     </form>
   );
